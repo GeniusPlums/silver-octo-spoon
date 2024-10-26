@@ -97,18 +97,91 @@ const MainContent: React.FC = () => {
 };
 
 const HeroSection: React.FC = () => {
-  return (
-    <div className="relative mb-12 h-[480px] overflow-hidden rounded-xl bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://example.com/networking-image.jpg")` }}>
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-        <h1 className="text-4xl font-bold mb-4">Connect, Grow, Succeed</h1>
-        <p className="text-xl mb-8">Your gateway to meaningful professional relationships</p>
-        <button className="bg-[#dfbf20] text-[#171611] px-8 py-3 rounded-full font-bold text-lg hover:bg-[#c5a91c] transition duration-300">
-          Join Now
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const slides = [
+      {
+        title: "Connect, Grow, Succeed",
+        description: "Your gateway to meaningful professional relationships",
+        image: "https://example.com/networking-image-1.jpg"
+      },
+      {
+        title: "Expand Your Network",
+        description: "Discover new opportunities through curated events and connections",
+        image: "https://example.com/networking-image-2.jpg"
+      },
+      {
+        title: "Elevate Your Career",
+        description: "Leverage the power of professional networking to reach new heights",
+        image: "https://example.com/networking-image-3.jpg"
+      }
+    ];
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }, []);
+  
+    const nextSlide = () => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    };
+  
+    const prevSlide = () => {
+      setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
+    };
+  
+    return (
+      <div className="relative mb-12">
+        <div className="relative h-[480px] overflow-hidden">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 flex flex-col gap-6 bg-cover bg-center bg-no-repeat items-start justify-end px-4 pb-10 transition-opacity duration-500 ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${slide.image}")`}}
+            >
+              <div className="flex flex-col gap-2 text-left max-w-2xl">
+                <h1 className="text-white text-4xl font-bold leading-tight tracking-[-0.033em] sm:text-5xl">
+                  {slide.title}
+                </h1>
+                <h2 className="text-white text-sm font-normal leading-normal sm:text-base">
+                  {slide.description}
+                </h2>
+              </div>
+              <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 sm:h-12 sm:px-5 bg-[#dfbf20] text-[#171611] text-sm font-bold leading-normal tracking-[0.015em] sm:text-base">
+                <span className="truncate">Get started</span>
+              </button>
+            </div>
+          ))}
+        </div>
+        <button
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+          onClick={prevSlide}
+        >
+          &#10094;
         </button>
+        <button
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+          onClick={nextSlide}
+        >
+          &#10095;
+        </button>
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full ${
+                index === currentSlide ? 'bg-[#dfbf20]' : 'bg-white bg-opacity-50'
+              }`}
+              onClick={() => setCurrentSlide(index)}
+            ></button>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 const AboutSection: React.FC = () => {
   return (
