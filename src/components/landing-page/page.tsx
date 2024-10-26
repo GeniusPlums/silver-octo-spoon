@@ -294,7 +294,7 @@ const TestimonialsSection: React.FC = () => {
         {testimonials.map((testimonial, index) => (
           <div key={index} className="bg-[#26241c] p-6 rounded-lg border border-[#524f3d]">
             <img src={testimonial.image} alt={testimonial.name} className="w-20 h-20 rounded-full mx-auto mb-4" />
-            <p className="text-[#b7b39e] mb-4 italic">"{testimonial.text}"</p>
+            <p className="text-[#b7b39e] mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
             <p className="font-semibold">{testimonial.name}</p>
           </div>
         ))}
