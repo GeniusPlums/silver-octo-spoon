@@ -183,30 +183,30 @@ const HeroSection: React.FC = () => {
     );
   };
 
-const AboutSection: React.FC = () => {
-  return (
-    <div className="my-12 text-white">
-      <h2 className="text-3xl font-bold mb-6">About M.E.T</h2>
-      <p className="text-lg mb-8">
-        Mingle Eat Talk is more than just a networking platform. We're a community dedicated to fostering genuine connections and professional growth. Our unique approach combines curated networking events, powerful relationship management tools, and a focus on meaningful interactions.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h3 className="text-xl font-semibold mb-2">Curated Connections</h3>
-          <p>We match you with professionals who align with your goals and interests.</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-2">Beyond Networking</h3>
-          <p>Build lasting relationships through shared experiences and collaborative opportunities.</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-2">Career Acceleration</h3>
-          <p>Leverage your network to unlock new opportunities and accelerate your professional growth.</p>
+  const AboutSection: React.FC = () => {
+    return (
+      <div className="my-12 text-white">
+        <h2 className="text-3xl font-bold mb-6">About M.E.T</h2>
+        <p className="text-lg mb-8">
+          Mingle Eat Talk is more than just a networking platform. We&apos;re a community dedicated to fostering genuine connections and professional growth. Our unique approach combines curated networking events, powerful relationship management tools, and a focus on meaningful interactions.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Curated Connections</h3>
+            <p>We match you with professionals who align with your goals and interests.</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Beyond Networking</h3>
+            <p>Build lasting relationships through shared experiences and collaborative opportunities.</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Career Acceleration</h3>
+            <p>Leverage your network to unlock new opportunities and accelerate your professional growth.</p>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 const HowItWorksSection: React.FC = () => {
   return (
