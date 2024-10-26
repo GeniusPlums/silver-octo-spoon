@@ -273,17 +273,17 @@ const TestimonialsSection: React.FC = () => {
     {
       name: "Jane Smith",
       image: "https://example.com/jane-smith.jpg",
-      text: "Mingle Eat Talk has transformed my professional networking experience. The connections I've made here have been invaluable to my career growth."
+      text: "Mingle Eat Talk has transformed my professional networking experience. The connections I&apos;ve made here have been invaluable to my career growth."
     },
     {
       name: "John Doe",
       image: "https://example.com/john-doe.jpg",
-      text: "The events on M.E.T are top-notch. I've met incredible people and learned so much from the diverse community here."
+      text: "The events on M.E.T are top-notch. I&apos;ve met incredible people and learned so much from the diverse community here."
     },
     {
       name: "Emily Johnson",
       image: "https://example.com/emily-johnson.jpg",
-      text: "As an entrepreneur, M.E.T has been crucial in helping me find mentors and collaborators. It's more than just networking - it's about building meaningful relationships."
+      text: "As an entrepreneur, M.E.T has been crucial in helping me find mentors and collaborators. It&apos;s more than just networking - it&apos;s about building meaningful relationships."
     }
   ];
 
