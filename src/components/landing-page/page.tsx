@@ -105,6 +105,12 @@ const MainContent: React.FC = () => {
 };
 
 const HeroSection: React.FC = () => {
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    router.push('/profile-page-1');
+  };
+
   return (
     <div className="py-16 text-center">
       <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -113,7 +119,10 @@ const HeroSection: React.FC = () => {
       <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
         Join a community of professionals who believe in the power of meaningful connections and shared experiences.
       </p>
-      <button className="bg-black text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-gray-800 transition duration-300">
+      <button 
+        onClick={handleGetStarted}
+        className="bg-black text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-gray-800 transition duration-300"
+      >
         Get Started
       </button>
     </div>
