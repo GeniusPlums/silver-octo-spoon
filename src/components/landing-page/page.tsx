@@ -24,7 +24,7 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
   };
 
   return (
-    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-8 lg:px-16 py-3 bg-white">
+    <header className="relative flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-8 lg:px-16 py-3 bg-white">
       <div className="flex items-center gap-4 text-gray-900">
         <div className="size-4">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,8 +43,10 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
         </div>
         <h2 className="text-gray-900 text-lg font-bold leading-tight tracking-[-0.015em]">Mingle Eat Talk</h2>
       </div>
-      <div className="flex flex-1 justify-end gap-8">
-        <nav className="hidden lg:flex items-center gap-9">
+      
+      {/* Desktop Navigation */}
+      <div className="hidden lg:flex flex-1 justify-end gap-8">
+        <nav className="flex items-center gap-9">
           <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">How it works</a>
           <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Community</a>
           <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Blog</a>
@@ -52,39 +54,48 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
         <div className="flex gap-2">
           <button 
             onClick={handleJoinClick}
-            className="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800"
+            className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800"
           >
             <span className="truncate">Join now</span>
           </button>
-          <button className="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200">
+          <button className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200">
             <span className="truncate">Sign In</span>
-          </button>
-          <button
-            className="lg:hidden text-gray-900"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
           </button>
         </div>
       </div>
+
+      {/* Mobile Navigation */}
+      <div className="flex lg:hidden items-center gap-4">
+        <button
+          className="p-2"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 lg:hidden shadow-lg z-50">
-          <nav className="flex flex-col items-center py-4">
-            <a className="text-gray-700 text-sm font-medium leading-normal py-2 hover:text-gray-900" href="#">How it works</a>
-            <a className="text-gray-700 text-sm font-medium leading-normal py-2 hover:text-gray-900" href="#">Events</a>
-            <a className="text-gray-700 text-sm font-medium leading-normal py-2 hover:text-gray-900" href="#">Community</a>
-            <a className="text-gray-700 text-sm font-medium leading-normal py-2 hover:text-gray-900" href="#">Blog</a>
-            <button 
-              onClick={handleJoinClick}
-              className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] mt-2 hover:bg-gray-800"
-            >
-              <span className="truncate">Join now</span>
-            </button>
-            <button className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] mt-2 hover:bg-gray-200">
-              <span className="truncate">Sign In</span>
-            </button>
+        <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50">
+          <nav className="flex flex-col w-full py-4">
+            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">How it works</a>
+            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">Events</a>
+            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">Community</a>
+            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">Blog</a>
+            <div className="flex flex-col gap-2 px-4 pt-3">
+              <button 
+                onClick={handleJoinClick}
+                className="w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800"
+              >
+                <span className="truncate">Join now</span>
+              </button>
+              <button className="w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200">
+                <span className="truncate">Sign In</span>
+              </button>
+            </div>
           </nav>
         </div>
       )}
