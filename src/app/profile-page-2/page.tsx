@@ -22,6 +22,7 @@ const industries: Industry[] = [
 const PreferencesTabPage: React.FC = () => {
   const router = useRouter();
   const [selectedIndustries, setSelectedIndustries] = useState<Industry[]>([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleIndustryChange = (industry: Industry) => {
     setSelectedIndustries(prev => {
@@ -48,7 +49,8 @@ const PreferencesTabPage: React.FC = () => {
   return (
     <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden font-['Plus_Jakarta_Sans']">
       <div className="layout-container flex h-full grow flex-col">
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#EEEEEE] px-10 py-3">
+        {/* Header */}
+        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#EEEEEE] px-4 sm:px-6 lg:px-10 py-3">
           <div className="flex items-center gap-4 text-black">
             <div className="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,15 +70,27 @@ const PreferencesTabPage: React.FC = () => {
             <h2 className="text-black text-lg font-bold leading-tight tracking-[-0.015em]">mingle eat talk</h2>
           </div>
           
-          <div className="flex flex-1 justify-end gap-8">
-            <div className="flex items-center gap-9">
+          <div className="flex flex-1 justify-end gap-4 items-center">
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-9">
               <a className="text-black text-sm font-medium leading-normal" href="#">About</a>
               <a className="text-black text-sm font-medium leading-normal" href="#">Events</a>
               <a className="text-black text-sm font-medium leading-normal" href="#">Contact</a>
+              <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                <span className="truncate">Login</span>
+              </button>
             </div>
-            <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em]">
-              <span className="truncate">Login</span>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden text-black p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             </button>
+
             <div
               className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
               style={{
@@ -84,10 +98,25 @@ const PreferencesTabPage: React.FC = () => {
               }}
             />
           </div>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="absolute top-full left-0 right-0 bg-white border-b border-[#EEEEEE] lg:hidden shadow-lg z-50">
+              <nav className="flex flex-col items-center py-4">
+                <a className="text-black text-sm font-medium leading-normal py-2 hover:text-gray-700 w-full text-center" href="#">About</a>
+                <a className="text-black text-sm font-medium leading-normal py-2 hover:text-gray-700 w-full text-center" href="#">Events</a>
+                <a className="text-black text-sm font-medium leading-normal py-2 hover:text-gray-700 w-full text-center" href="#">Contact</a>
+                <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] mt-2">
+                  <span className="truncate">Login</span>
+                </button>
+              </nav>
+            </div>
+          )}
         </header>
         
-        <div className="px-40 flex flex-1 justify-center py-5">
-          <div className="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 flex-1">
+        {/* Main Content */}
+        <div className="px-4 sm:px-6 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+          <div className="layout-content-container flex flex-col w-full md:w-[512px] max-w-[512px] py-5 flex-1">
             {/* Navigation Tabs */}
             <div className="pb-3">
               <div className="flex border-b border-[#DEDEDE] px-4 gap-8">
@@ -107,20 +136,20 @@ const PreferencesTabPage: React.FC = () => {
             </div>
 
             {/* Main Content */}
-            <h2 className="text-black tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">
+            <h2 className="text-black tracking-light text-xl sm:text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">
               Select upto 10 Industries in which you want to connect
             </h2>
 
             <div className="px-4">
               {industries.map((industry) => (
-                <label key={industry.id} className="flex gap-x-3 py-3 flex-row">
+                <label key={industry.id} className="flex gap-x-3 py-3 flex-row items-start">
                   <input
                     type="checkbox"
                     checked={selectedIndustries.some(i => i.id === industry.id)}
                     onChange={() => handleIndustryChange(industry)}
-                    className="h-5 w-5 rounded border-[#DEDEDE] border-2 bg-transparent text-black checked:bg-black checked:border-black checked:bg-[image:var(--checkbox-tick-svg)] focus:ring-0 focus:ring-offset-0 focus:border-[#DEDEDE] focus:outline-none"
+                    className="h-5 w-5 mt-0.5 rounded border-[#DEDEDE] border-2 bg-transparent text-black checked:bg-black checked:border-black checked:bg-[image:var(--checkbox-tick-svg)] focus:ring-0 focus:ring-offset-0 focus:border-[#DEDEDE] focus:outline-none"
                   />
-                  <p className="text-black text-base font-normal leading-normal">{industry.name}</p>
+                  <p className="text-black text-sm sm:text-base font-normal leading-normal">{industry.name}</p>
                 </label>
               ))}
             </div>
@@ -130,13 +159,13 @@ const PreferencesTabPage: React.FC = () => {
               <div className="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-between">
                 <button 
                   onClick={handlePrevious}
-                  className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#EEEEEE] text-black text-base font-bold leading-normal tracking-[0.015em]"
+                  className="flex min-w-[84px] flex-1 sm:flex-initial cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#EEEEEE] text-black text-base font-bold leading-normal tracking-[0.015em]"
                 >
                   <span className="truncate">Prev</span>
                 </button>
                 <button 
                   onClick={handleContinue}
-                  className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em]"
+                  className="flex min-w-[84px] flex-1 sm:flex-initial cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em]"
                 >
                   <span className="truncate">Continue</span>
                 </button>
@@ -147,7 +176,13 @@ const PreferencesTabPage: React.FC = () => {
 
         {/* Footer */}
         <footer className="flex justify-center">
-          <div className="flex max-w-[960px] flex-1 flex-col" />
+          <div className="flex max-w-[960px] flex-1 flex-col">
+            <footer className="flex flex-col gap-6 px-5 py-10 text-center">
+              <p className="text-[#6B6B6B] text-base font-normal leading-normal">
+                © 2024 mingle eat talk
+              </p>
+            </footer>
+          </div>
         </footer>
       </div>
     </div>
