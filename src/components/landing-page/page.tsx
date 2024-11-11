@@ -1,11 +1,12 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const MingleEatTalk: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-[#171611] dark group/design-root overflow-x-hidden" style={{ fontFamily: 'Epilogue, "Noto Sans", sans-serif' }}>
+    <div className="relative flex size-full min-h-screen flex-col bg-white" style={{ fontFamily: 'Epilogue, "Noto Sans", sans-serif' }}>
       <div className="layout-container flex h-full grow flex-col">
         <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <MainContent />
@@ -16,9 +17,15 @@ const MingleEatTalk: React.FC = () => {
 };
 
 const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) => void }> = ({ isMenuOpen, setIsMenuOpen }) => {
+  const router = useRouter();
+
+  const handleJoinClick = () => {
+    router.push('/profile-page-1');
+  };
+
   return (
-    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#383529] px-4 sm:px-8 lg:px-16 py-3">
-      <div className="flex items-center gap-4 text-white">
+    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-8 lg:px-16 py-3 bg-white">
+      <div className="flex items-center gap-4 text-gray-900">
         <div className="size-4">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -34,23 +41,26 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
             ></path>
           </svg>
         </div>
-        <h2 className="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Mingle Eat Talk</h2>
+        <h2 className="text-gray-900 text-lg font-bold leading-tight tracking-[-0.015em]">Mingle Eat Talk</h2>
       </div>
       <div className="flex flex-1 justify-end gap-8">
         <nav className="hidden lg:flex items-center gap-9">
-          <a className="text-white text-sm font-medium leading-normal" href="#">How it works</a>
-          <a className="text-white text-sm font-medium leading-normal" href="#">Community</a>
-          <a className="text-white text-sm font-medium leading-normal" href="#">Blog</a>
+          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">How it works</a>
+          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Community</a>
+          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Blog</a>
         </nav>
         <div className="flex gap-2">
-          <button className="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#dfbf20] text-[#171611] text-sm font-bold leading-normal tracking-[0.015em]">
+          <button 
+            onClick={handleJoinClick}
+            className="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800"
+          >
             <span className="truncate">Join now</span>
           </button>
-          <button className="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#383529] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+          <button className="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200">
             <span className="truncate">Sign In</span>
           </button>
           <button
-            className="lg:hidden text-white"
+            className="lg:hidden text-gray-900"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -60,16 +70,19 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
         </div>
       </div>
       {isMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-[#171611] border-b border-[#383529] lg:hidden">
+        <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 lg:hidden shadow-lg z-50">
           <nav className="flex flex-col items-center py-4">
-            <a className="text-white text-sm font-medium leading-normal py-2" href="#">How it works</a>
-            <a className="text-white text-sm font-medium leading-normal py-2" href="#">Events</a>
-            <a className="text-white text-sm font-medium leading-normal py-2" href="#">Community</a>
-            <a className="text-white text-sm font-medium leading-normal py-2" href="#">Blog</a>
-            <button className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#dfbf20] text-[#171611] text-sm font-bold leading-normal tracking-[0.015em] mt-2">
+            <a className="text-gray-700 text-sm font-medium leading-normal py-2 hover:text-gray-900" href="#">How it works</a>
+            <a className="text-gray-700 text-sm font-medium leading-normal py-2 hover:text-gray-900" href="#">Events</a>
+            <a className="text-gray-700 text-sm font-medium leading-normal py-2 hover:text-gray-900" href="#">Community</a>
+            <a className="text-gray-700 text-sm font-medium leading-normal py-2 hover:text-gray-900" href="#">Blog</a>
+            <button 
+              onClick={handleJoinClick}
+              className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] mt-2 hover:bg-gray-800"
+            >
               <span className="truncate">Join now</span>
             </button>
-            <button className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#383529] text-white text-sm font-bold leading-normal tracking-[0.015em] mt-2">
+            <button className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] mt-2 hover:bg-gray-200">
               <span className="truncate">Sign In</span>
             </button>
           </nav>
@@ -81,158 +94,82 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
 
 const MainContent: React.FC = () => {
   return (
-    <div className="px-4 sm:px-8 lg:px-16 flex flex-1 justify-center py-5">
-      <div className="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
-        <HeroSection />
-        <AboutSection />
-        <HowItWorksSection />
-        <UpcomingEventsSection />
-        <TestimonialsSection />
-        <MembershipTiersSection />
-        <CallToActionSection />
-        <SocialProofSection />
+    <main className="flex-1 px-4 sm:px-8 lg:px-16 bg-white">
+      <HeroSection />
+      <AboutSection />
+      <HowItWorksSection />
+      <UpcomingEventsSection />
+      <TestimonialsSection />
+    </main>
+  );
+};
+
+const HeroSection: React.FC = () => {
+  return (
+    <div className="py-16 text-center">
+      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Connect, Share, and Grow Together
+      </h1>
+      <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+        Join a community of professionals who believe in the power of meaningful connections and shared experiences.
+      </p>
+      <button className="bg-black text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-gray-800 transition duration-300">
+        Get Started
+      </button>
+    </div>
+  );
+};
+
+const AboutSection: React.FC = () => {
+  return (
+    <div className="my-12 text-gray-900">
+      <h2 className="text-3xl font-bold mb-6">About M.E.T</h2>
+      <p className="text-lg mb-8 text-gray-700">
+        Mingle Eat Talk is more than just a networking platform. We&apos;re a community dedicated to fostering genuine connections and professional growth. Our unique approach combines curated networking events, powerful relationship management tools, and a focus on meaningful interactions.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="bg-gray-50 p-6 rounded-xl">
+          <h3 className="text-xl font-semibold mb-2">Curated Connections</h3>
+          <p className="text-gray-700">We match you with professionals who align with your goals and interests.</p>
+        </div>
+        <div className="bg-gray-50 p-6 rounded-xl">
+          <h3 className="text-xl font-semibold mb-2">Beyond Networking</h3>
+          <p className="text-gray-700">Build lasting relationships through shared experiences and collaborative opportunities.</p>
+        </div>
+        <div className="bg-gray-50 p-6 rounded-xl">
+          <h3 className="text-xl font-semibold mb-2">Career Acceleration</h3>
+          <p className="text-gray-700">Leverage your network to unlock new opportunities and accelerate your professional growth.</p>
+        </div>
       </div>
     </div>
   );
 };
 
-const HeroSection: React.FC = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const slides = [
-      {
-        title: "Connect, Grow, Succeed",
-        description: "Your gateway to meaningful professional relationships",
-        image: "https://example.com/networking-image-1.jpg"
-      },
-      {
-        title: "Expand Your Network",
-        description: "Discover new opportunities through curated events and connections",
-        image: "https://example.com/networking-image-2.jpg"
-      },
-      {
-        title: "Elevate Your Career",
-        description: "Leverage the power of professional networking to reach new heights",
-        image: "https://example.com/networking-image-3.jpg"
-      }
-    ];
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-      }, 5000);
-      return () => clearInterval(interval);
-    }, []);
-  
-    const nextSlide = () => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    };
-  
-    const prevSlide = () => {
-      setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
-    };
-  
-    return (
-      <div className="relative mb-12">
-        <div className="relative h-[480px] overflow-hidden">
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 flex flex-col gap-6 bg-cover bg-center bg-no-repeat items-start justify-end px-4 pb-10 transition-opacity duration-500 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${slide.image}")`}}
-            >
-              <div className="flex flex-col gap-2 text-left max-w-2xl">
-                <h1 className="text-white text-4xl font-bold leading-tight tracking-[-0.033em] sm:text-5xl">
-                  {slide.title}
-                </h1>
-                <h2 className="text-white text-sm font-normal leading-normal sm:text-base">
-                  {slide.description}
-                </h2>
-              </div>
-              <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 sm:h-12 sm:px-5 bg-[#dfbf20] text-[#171611] text-sm font-bold leading-normal tracking-[0.015em] sm:text-base">
-                <span className="truncate">Get started</span>
-              </button>
-            </div>
-          ))}
-        </div>
-        <button
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
-          onClick={prevSlide}
-        >
-          &#10094;
-        </button>
-        <button
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
-          onClick={nextSlide}
-        >
-          &#10095;
-        </button>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              className={`w-2 h-2 rounded-full ${
-                index === currentSlide ? 'bg-[#dfbf20]' : 'bg-white bg-opacity-50'
-              }`}
-              onClick={() => setCurrentSlide(index)}
-            ></button>
-          ))}
-        </div>
-      </div>
-    );
-  };
-
-  const AboutSection: React.FC = () => {
-    return (
-      <div className="my-12 text-white">
-        <h2 className="text-3xl font-bold mb-6">About M.E.T</h2>
-        <p className="text-lg mb-8">
-          Mingle Eat Talk is more than just a networking platform. We&apos;re a community dedicated to fostering genuine connections and professional growth. Our unique approach combines curated networking events, powerful relationship management tools, and a focus on meaningful interactions.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Curated Connections</h3>
-            <p>We match you with professionals who align with your goals and interests.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Beyond Networking</h3>
-            <p>Build lasting relationships through shared experiences and collaborative opportunities.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Career Acceleration</h3>
-            <p>Leverage your network to unlock new opportunities and accelerate your professional growth.</p>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
 const HowItWorksSection: React.FC = () => {
   return (
-    <div className="my-12 text-white">
+    <div className="my-12 text-gray-900">
       <h2 className="text-3xl font-bold mb-6">How It Works</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="text-center">
-          <div className="bg-[#dfbf20] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <div className="text-center bg-gray-50 p-6 rounded-xl">
+          <div className="bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-bold">1</span>
           </div>
           <h3 className="text-xl font-semibold mb-2">Create Your Profile</h3>
-          <p>Sign up and build your professional profile to showcase your skills and interests.</p>
+          <p className="text-gray-700">Sign up and build your professional profile to showcase your skills and interests.</p>
         </div>
-        <div className="text-center">
-          <div className="bg-[#dfbf20] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <div className="text-center bg-gray-50 p-6 rounded-xl">
+          <div className="bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-bold">2</span>
           </div>
           <h3 className="text-xl font-semibold mb-2">Connect & Engage</h3>
-          <p>Attend events, join discussions, and connect with like-minded professionals.</p>
+          <p className="text-gray-700">Attend events, join discussions, and connect with like-minded professionals.</p>
         </div>
-        <div className="text-center">
-          <div className="bg-[#dfbf20] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <div className="text-center bg-gray-50 p-6 rounded-xl">
+          <div className="bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-bold">3</span>
           </div>
           <h3 className="text-xl font-semibold mb-2">Grow Your Network</h3>
-          <p>Nurture relationships and leverage your connections for mutual growth and success.</p>
+          <p className="text-gray-700">Nurture relationships and leverage your connections for mutual growth and success.</p>
         </div>
       </div>
     </div>
@@ -241,28 +178,28 @@ const HowItWorksSection: React.FC = () => {
 
 const UpcomingEventsSection: React.FC = () => {
   const events = [
-    { title: "Tech Networking Mixer", date: "May 15, 2023", location: "Virtual" },
-    { title: "Women in Leadership Forum", date: "June 2, 2023", location: "New York, NY" },
-    { title: "Startup Pitch Night", date: "June 10, 2023", location: "San Francisco, CA" },
+    { title: "Tech Networking Mixer", date: "May 15, 2024", location: "Virtual" },
+    { title: "Women in Leadership Forum", date: "June 2, 2024", location: "New York, NY" },
+    { title: "Startup Pitch Night", date: "June 10, 2024", location: "San Francisco, CA" },
   ];
 
   return (
-    <div className="my-12 text-white">
+    <div className="my-12 text-gray-900">
       <h2 className="text-3xl font-bold mb-6">Upcoming Events</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {events.map((event, index) => (
-          <div key={index} className="bg-[#26241c] p-4 rounded-lg border border-[#524f3d]">
+          <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
             <h3 className="text-lg font-semibold mb-2">{event.title}</h3>
-            <p className="text-[#b7b39e] mb-2">{event.date}</p>
-            <p className="text-[#b7b39e] mb-4">{event.location}</p>
-            <button className="bg-[#dfbf20] text-[#171611] px-4 py-2 rounded-full font-bold hover:bg-[#c5a91c] transition duration-300">
+            <p className="text-gray-600 mb-2">{event.date}</p>
+            <p className="text-gray-600 mb-4">{event.location}</p>
+            <button className="bg-black text-white px-4 py-2 rounded-xl font-bold hover:bg-gray-800 transition duration-300">
               Register
             </button>
           </div>
         ))}
       </div>
       <div className="text-center mt-8">
-        <a href="#" className="text-[#dfbf20] hover:underline">View all events</a>
+        <a href="#" className="text-black hover:text-gray-800 font-medium hover:underline">View all events</a>
       </div>
     </div>
   );
@@ -271,128 +208,38 @@ const UpcomingEventsSection: React.FC = () => {
 const TestimonialsSection: React.FC = () => {
   const testimonials = [
     {
-      name: "Jane Smith",
-      image: "https://example.com/jane-smith.jpg",
-      text: "Mingle Eat Talk has transformed my professional networking experience. The connections I&apos;ve made here have been invaluable to my career growth."
+      name: "Sarah Johnson",
+      role: "Product Manager",
+      company: "Tech Corp",
+      text: "M.E.T has transformed how I approach networking. The connections I've made here are genuine and valuable.",
     },
     {
-      name: "John Doe",
-      image: "https://example.com/john-doe.jpg",
-      text: "The events on M.E.T are top-notch. I&apos;ve met incredible people and learned so much from the diverse community here."
+      name: "David Chen",
+      role: "Startup Founder",
+      company: "Innovation Labs",
+      text: "The quality of connections and events on this platform is unmatched. It's been instrumental in growing my business.",
     },
     {
-      name: "Emily Johnson",
-      image: "https://example.com/emily-johnson.jpg",
-      text: "As an entrepreneur, M.E.T has been crucial in helping me find mentors and collaborators. It&apos;s more than just networking - it&apos;s about building meaningful relationships."
-    }
+      name: "Maria Garcia",
+      role: "Marketing Director",
+      company: "Creative Solutions",
+      text: "I've found an incredible community of like-minded professionals here. The events are always insightful and well-organized.",
+    },
   ];
 
   return (
-    <div className="my-12 text-white">
+    <div className="my-12 text-gray-900">
       <h2 className="text-3xl font-bold mb-6">What Our Members Say</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="bg-[#26241c] p-6 rounded-lg border border-[#524f3d]">
-            <img src={testimonial.image} alt={testimonial.name} className="w-20 h-20 rounded-full mx-auto mb-4" />
-            <p className="text-[#b7b39e] mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
-            <p className="font-semibold">{testimonial.name}</p>
+          <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
+            <div>
+              <p className="font-semibold">{testimonial.name}</p>
+              <p className="text-gray-600">{testimonial.role}</p>
+              <p className="text-gray-600">{testimonial.company}</p>
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const MembershipTiersSection: React.FC = () => {
-  const tiers = [
-    {
-      name: "Free",
-      price: "$0",
-      features: [
-        "Personal CRM",
-        "Notes & Reminders",
-        "10 Introductions/Month",
-        "1,000 Contacts",
-        "25 Events/Month",
-        "5 Search Filters"
-      ]
-    },
-    {
-      name: "Basic",
-      price: "$9/month",
-      features: [
-        "Everything in Free",
-        "Unlimited Introductions",
-        "2,000 Contacts",
-        "50 Events/Month",
-        "10 Search Filters"
-      ]
-    },
-    {
-      name: "Premium",
-      price: "$19/month",
-      features: [
-        "Everything in Basic",
-        "Priority Support",
-        "First Access to New Features",
-        "4,000 Contacts",
-        "100 Events/Month",
-        "20 Search Filters"
-      ]
-    }
-  ];
-
-  return (
-    <div className="my-12 text-white">
-      <h2 className="text-3xl font-bold mb-6">Membership Tiers</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {tiers.map((tier, index) => (
-          <div key={index} className="bg-[#26241c] p-6 rounded-lg border border-[#524f3d]">
-            <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-            <p className="text-3xl font-bold mb-4">{tier.price}</p>
-            <ul className="mb-6">
-              {tier.features.map((feature, featureIndex) => (
-                <li key={featureIndex} className="mb-2 flex items-center">
-                  <span className="text-[#dfbf20] mr-2">✓</span> {feature}
-                </li>
-              ))}
-            </ul>
-            <button className="w-full bg-[#dfbf20] text-[#171611] px-4 py-2 rounded-full font-bold hover:bg-[#c5a91c] transition duration-300">
-              Choose {tier.name}
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const CallToActionSection: React.FC = () => {
-  return (
-    <div className="my-12 text-white text-center">
-      <h2 className="text-3xl font-bold mb-4">Ready to Elevate Your Professional Network?</h2>
-      <p className="text-xl mb-8">Join Mingle Eat Talk today and start building meaningful connections!</p>
-      <button className="bg-[#dfbf20] text-[#171611] px-8 py-3 rounded-full font-bold text-lg hover:bg-[#c5a91c] transition duration-300">
-        Join Now
-      </button>
-    </div>
-  );
-};
-
-const SocialProofSection: React.FC = () => {
-  const partners = [
-    { name: "TechCrunch", logo: "https://example.com/techcrunch-logo.png" },
-    { name: "Forbes", logo: "https://example.com/forbes-logo.png" },
-    { name: "Startup Grind", logo: "https://example.com/startup-grind-logo.png" },
-    { name: "Women in Tech", logo: "https://example.com/women-in-tech-logo.png" },
-  ];
-
-  return (
-    <div className="my-12 text-white">
-      <h2 className="text-3xl font-bold mb-6 text-center">Trusted By</h2>
-      <div className="flex flex-wrap justify-center items-center gap-8">
-        {partners.map((partner, index) => (
-          <img key={index} src={partner.logo} alt={partner.name} className="h-12 opacity-70 hover:opacity-100 transition duration-300" />
         ))}
       </div>
     </div>
@@ -401,49 +248,48 @@ const SocialProofSection: React.FC = () => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#26241c] text-white py-12">
+    <footer className="bg-gray-50 text-gray-900 py-12 border-t border-gray-200">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul>
-              <li><a href="#" className="hover:text-[#dfbf20]">About Us</a></li>
-              <li><a href="#" className="hover:text-[#dfbf20]">How It Works</a></li>
-              <li><a href="#" className="hover:text-[#dfbf20]">Features</a></li>
-              <li><a href="#" className="hover:text-[#dfbf20]">Pricing</a></li>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-700 hover:text-black">About Us</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">How It Works</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Features</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Community</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-700 hover:text-black">Events</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Blog</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Forums</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Success Stories</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
-            <ul>
-              <li><a href="#" className="hover:text-[#dfbf20]">FAQs</a></li>
-              <li><a href="#" className="hover:text-[#dfbf20]">Contact Us</a></li>
-              <li><a href="#" className="hover:text-[#dfbf20]">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-[#dfbf20]">Terms of Service</a></li>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-700 hover:text-black">Help Center</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">FAQs</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Contact Us</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Privacy Policy</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
-            <ul>
-              <li><a href="#" className="hover:text-[#dfbf20]">Twitter</a></li>
-              <li><a href="#" className="hover:text-[#dfbf20]">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-[#dfbf20]">Facebook</a></li>
-              <li><a href="#" className="hover:text-[#dfbf20]">Instagram</a></li>
+            <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-700 hover:text-black">LinkedIn</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Twitter</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Instagram</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Facebook</a></li>
             </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-            <p className="mb-4">Stay updated with our latest news and events.</p>
-            <form className="flex">
-              <input type="email" placeholder="Your email" className="bg-[#383529] px-4 py-2 rounded-l-full focus:outline-none" />
-              <button type="submit" className="bg-[#dfbf20] text-[#171611] px-4 py-2 rounded-r-full font-bold hover:bg-[#c5a91c] transition duration-300">
-                Subscribe
-              </button>
-            </form>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-[#383529] text-center">
-          <p>&copy; 2023 Mingle Eat Talk. All rights reserved.</p>
+        <div className="mt-8 pt-8 border-t border-gray-200 text-center text-gray-600">
+          <p>&copy; 2024 Mingle Eat Talk. All rights reserved.</p>
         </div>
       </div>
     </footer>
