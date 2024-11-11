@@ -211,19 +211,19 @@ const TestimonialsSection: React.FC = () => {
       name: "Sarah Johnson",
       role: "Product Manager",
       company: "Tech Corp",
-      text: "M.E.T has transformed how I approach networking. The connections I've made here are genuine and valuable.",
+      text: "M.E.T has transformed how I approach networking. The connections I&apos;ve made here are genuine and valuable.",
     },
     {
       name: "David Chen",
       role: "Startup Founder",
       company: "Innovation Labs",
-      text: "The quality of connections and events on this platform is unmatched. It's been instrumental in growing my business.",
+      text: "The quality of connections and events on this platform is unmatched. It&apos;s been instrumental in growing my business.",
     },
     {
       name: "Maria Garcia",
       role: "Marketing Director",
       company: "Creative Solutions",
-      text: "I've found an incredible community of like-minded professionals here. The events are always insightful and well-organized.",
+      text: "I&apos;ve found an incredible community of like-minded professionals here. The events are always insightful and well-organized.",
     },
   ];
 
@@ -233,7 +233,7 @@ const TestimonialsSection: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-            <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
+            <p className="text-gray-700 mb-4">&ldquo;{testimonial.text}&rdquo;</p>
             <div>
               <p className="font-semibold">{testimonial.name}</p>
               <p className="text-gray-600">{testimonial.role}</p>
