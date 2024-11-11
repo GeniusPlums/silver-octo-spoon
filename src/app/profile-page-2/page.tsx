@@ -50,7 +50,7 @@ const PreferencesTabPage: React.FC = () => {
     <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden font-['Plus_Jakarta_Sans']">
       <div className="layout-container flex h-full grow flex-col">
         {/* Header */}
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#EEEEEE] px-4 sm:px-6 lg:px-10 py-3">
+        <header className="relative flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#EEEEEE] px-4 sm:px-6 lg:px-10 py-3">
           <div className="flex items-center gap-4 text-black">
             <div className="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,9 +70,9 @@ const PreferencesTabPage: React.FC = () => {
             <h2 className="text-black text-lg font-bold leading-tight tracking-[-0.015em]">mingle eat talk</h2>
           </div>
           
-          <div className="flex flex-1 justify-end gap-4 items-center">
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-9">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex flex-1 justify-end gap-8">
+            <div className="flex items-center gap-9">
               <a className="text-black text-sm font-medium leading-normal" href="#">About</a>
               <a className="text-black text-sm font-medium leading-normal" href="#">Events</a>
               <a className="text-black text-sm font-medium leading-normal" href="#">Contact</a>
@@ -80,17 +80,19 @@ const PreferencesTabPage: React.FC = () => {
                 <span className="truncate">Login</span>
               </button>
             </div>
+          </div>
 
-            {/* Mobile Menu Button */}
+          {/* Mobile Navigation */}
+          <div className="flex lg:hidden items-center gap-4">
             <button
-              className="lg:hidden text-black p-2"
+              className="p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6" fill="none" stroke="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
-
             <div
               className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
               style={{
@@ -99,16 +101,18 @@ const PreferencesTabPage: React.FC = () => {
             />
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu Overlay */}
           {isMenuOpen && (
-            <div className="absolute top-full left-0 right-0 bg-white border-b border-[#EEEEEE] lg:hidden shadow-lg z-50">
-              <nav className="flex flex-col items-center py-4">
-                <a className="text-black text-sm font-medium leading-normal py-2 hover:text-gray-700 w-full text-center" href="#">About</a>
-                <a className="text-black text-sm font-medium leading-normal py-2 hover:text-gray-700 w-full text-center" href="#">Events</a>
-                <a className="text-black text-sm font-medium leading-normal py-2 hover:text-gray-700 w-full text-center" href="#">Contact</a>
-                <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] mt-2">
-                  <span className="truncate">Login</span>
-                </button>
+            <div className="absolute top-full left-0 right-0 bg-white border-b border-[#EEEEEE] shadow-lg z-50">
+              <nav className="flex flex-col w-full py-4">
+                <a className="text-black text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50" href="#">About</a>
+                <a className="text-black text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50" href="#">Events</a>
+                <a className="text-black text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50" href="#">Contact</a>
+                <div className="px-4 pt-3">
+                  <button className="w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                    <span className="truncate">Login</span>
+                  </button>
+                </div>
               </nav>
             </div>
           )}
