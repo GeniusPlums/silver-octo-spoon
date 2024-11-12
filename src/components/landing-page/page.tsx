@@ -41,7 +41,7 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
       {/* Desktop Navigation */}
       <div className="hidden lg:flex flex-1 justify-end gap-8">
         <nav className="flex items-center gap-9">
-          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">How it works</a>
+          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">About Mingle Eat Talk</a>
           <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Community</a>
           <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Blog</a>
         </nav>
