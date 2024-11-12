@@ -18,11 +18,7 @@ const MingleEatTalk: React.FC = () => {
 
 const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) => void }> = ({ isMenuOpen, setIsMenuOpen }) => {
   const router = useRouter();
-
-  const handleJoinClick = () => {
-    router.push('/profile-page-1');
-  };
-
+  
   return (
     <header className="relative flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-8 lg:px-16 py-3 bg-white">
       <div className="flex items-center gap-4 text-gray-900">
