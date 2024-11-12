@@ -52,12 +52,6 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
           <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Blog</a>
         </nav>
         <div className="flex gap-2">
-          <button 
-            onClick={handleJoinClick}
-            className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800"
-          >
-            <span className="truncate">Join now</span>
-          </button>
           <button className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200">
             <span className="truncate">Sign In</span>
           </button>
@@ -81,17 +75,11 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
       {isMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50">
           <nav className="flex flex-col w-full py-4">
-            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">How it works</a>
+            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">About Mingle Eat Talk</a>
             <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">Events</a>
             <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">Community</a>
             <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">Blog</a>
             <div className="flex flex-col gap-2 px-4 pt-3">
-              <button 
-                onClick={handleJoinClick}
-                className="w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800"
-              >
-                <span className="truncate">Join now</span>
-              </button>
               <button className="w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200">
                 <span className="truncate">Sign In</span>
               </button>
@@ -276,7 +264,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-700 hover:text-black">About Us</a></li>
               <li><a href="#" className="text-gray-700 hover:text-black">How It Works</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Features</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-black">Why Mingle Eat Talk</a></li>
               <li><a href="#" className="text-gray-700 hover:text-black">Pricing</a></li>
             </ul>
           </div>
@@ -285,7 +273,6 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-700 hover:text-black">Events</a></li>
               <li><a href="#" className="text-gray-700 hover:text-black">Blog</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Forums</a></li>
               <li><a href="#" className="text-gray-700 hover:text-black">Success Stories</a></li>
             </ul>
           </div>
@@ -302,7 +289,6 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-700 hover:text-black">LinkedIn</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Twitter</a></li>
               <li><a href="#" className="text-gray-700 hover:text-black">Instagram</a></li>
               <li><a href="#" className="text-gray-700 hover:text-black">Facebook</a></li>
             </ul>
