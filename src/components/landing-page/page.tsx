@@ -41,7 +41,7 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
       {/* Desktop Navigation */}
       <div className="hidden lg:flex flex-1 justify-end gap-8">
         <nav className="flex items-center gap-9">
-          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">About Mingle Eat Talk</a>
+          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">About Mingle Eat</a>
           <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Community</a>
           <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Blog</a>
         </nav>
@@ -114,7 +114,7 @@ const HeroSection: React.FC = () => {
       </p>
       <button 
         onClick={handleGetStarted}
-        className="bg-black text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-gray-800 transition duration-300"
+        className="bg-yellow-400 text-black px-8 py-3 rounded-xl font-bold text-lg hover:bg-yellow-500 transition duration-300"
       >
         Get Started
       </button>
@@ -152,22 +152,22 @@ const HowItWorksSection: React.FC = () => {
     <div className="my-12 text-gray-900">
       <h2 className="text-3xl font-bold mb-6">How It Works</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="text-center bg-gray-50 p-6 rounded-xl">
-          <div className="bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <div className="text-center bg-yellow-50 p-6 rounded-xl">
+          <div className="bg-yellow-400 text-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-bold">1</span>
           </div>
           <h3 className="text-xl font-semibold mb-2">Create Your Profile</h3>
           <p className="text-gray-700">Sign up and build your professional profile to showcase your skills and interests.</p>
         </div>
-        <div className="text-center bg-gray-50 p-6 rounded-xl">
-          <div className="bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <div className="text-center bg-yellow-50 p-6 rounded-xl">
+          <div className="bg-yellow-400 text-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-bold">2</span>
           </div>
           <h3 className="text-xl font-semibold mb-2">Connect & Engage</h3>
           <p className="text-gray-700">Attend events, join discussions, and connect with like-minded professionals.</p>
         </div>
-        <div className="text-center bg-gray-50 p-6 rounded-xl">
-          <div className="bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <div className="text-center bg-yellow-50 p-6 rounded-xl">
+          <div className="bg-yellow-400 text-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-bold">3</span>
           </div>
           <h3 className="text-xl font-semibold mb-2">Grow Your Network</h3>
@@ -190,11 +190,11 @@ const UpcomingEventsSection: React.FC = () => {
       <h2 className="text-3xl font-bold mb-6">Upcoming Events</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {events.map((event, index) => (
-          <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+          <div key={index} className="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
             <h3 className="text-lg font-semibold mb-2">{event.title}</h3>
             <p className="text-gray-600 mb-2">{event.date}</p>
             <p className="text-gray-600 mb-4">{event.location}</p>
-            <button className="bg-black text-white px-4 py-2 rounded-xl font-bold hover:bg-gray-800 transition duration-300">
+            <button className="bg-yellow-400 text-black px-4 py-2 rounded-xl font-bold hover:bg-yellow-500 transition duration-300">
               Register
             </button>
           </div>
@@ -234,7 +234,7 @@ const TestimonialsSection: React.FC = () => {
       <h2 className="text-3xl font-bold mb-6">What Our Members Say</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+          <div key={index} className="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
             <p className="text-gray-700 mb-4">&ldquo;{testimonial.text}&rdquo;</p>
             <div>
               <p className="font-semibold">{testimonial.name}</p>
