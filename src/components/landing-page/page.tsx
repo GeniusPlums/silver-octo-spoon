@@ -130,15 +130,15 @@ const AboutSection: React.FC = () => {
         Mingle Eat Talk is more than just a networking platform. We&apos;re a community dedicated to fostering genuine connections and professional growth. Our unique approach combines curated networking events, powerful relationship management tools, and a focus on meaningful interactions.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-gray-50 p-6 rounded-xl">
+        <div className="bg-yellow-50 p-6 rounded-xl">
           <h3 className="text-xl font-semibold mb-2">Curated Connections</h3>
           <p className="text-gray-700">We match you with professionals who align with your goals and interests.</p>
         </div>
-        <div className="bg-gray-50 p-6 rounded-xl">
+        <div className="bg-yellow-50 p-6 rounded-xl">
           <h3 className="text-xl font-semibold mb-2">Beyond Networking</h3>
           <p className="text-gray-700">Build lasting relationships through shared experiences and collaborative opportunities.</p>
         </div>
-        <div className="bg-gray-50 p-6 rounded-xl">
+        <div className="bg-yellow-50 p-6 rounded-xl">
           <h3 className="text-xl font-semibold mb-2">Career Acceleration</h3>
           <p className="text-gray-700">Leverage your network to unlock new opportunities and accelerate your professional growth.</p>
         </div>
