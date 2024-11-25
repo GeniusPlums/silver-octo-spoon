@@ -26,13 +26,13 @@ export default function FAQ() {
         <AccordionItem value="item-4">
           <AccordionTrigger>How do I join M.E.T.?</AccordionTrigger>
           <AccordionContent>
-            Simply click on the registration link, fill out a quick form, and schedule a short 15-minute curation call. If all goes well, you'll confirm your membership and start connecting!
+            Simply click on the registration link, fill out a quick form, and schedule a short 15-minute curation call. If all goes well, you&apos;ll confirm your membership and start connecting!
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-5">
-          <AccordionTrigger>What's a curation call?</AccordionTrigger>
+          <AccordionTrigger>What&apos;s a curation call?</AccordionTrigger>
           <AccordionContent>
-            It's a quick 15-minute chat where we get to know you a little better and make sure M.E.T. is the right fit for your social goals. No stress—just a friendly conversation!
+            It&apos;s a quick 15-minute chat where we get to know you a little better and make sure M.E.T. is the right fit for your social goals. No stress—just a friendly conversation!
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-6">
@@ -56,11 +56,11 @@ export default function FAQ() {
         <AccordionItem value="item-9">
           <AccordionTrigger>Is there a membership fee?</AccordionTrigger>
           <AccordionContent>
-            Yes, M.E.T. is a premium community, so there is a membership fee to ensure high-quality events and experiences. It's worth every penny for the connections and fun you'll have!
+            Yes, M.E.T. is a premium community, so there is a membership fee to ensure high-quality events and experiences. It&apos;s worth every penny for the connections and fun you&apos;ll have!
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-10">
-          <AccordionTrigger>What happens if I don't get along with someone?</AccordionTrigger>
+          <AccordionTrigger>What happens if I don&apos;t get along with someone?</AccordionTrigger>
           <AccordionContent>
             No worries! M.E.T. is about finding the right people for you. If you ever feel uncomfortable, we have a support system in place to ensure everyone feels safe and respected.
           </AccordionContent>

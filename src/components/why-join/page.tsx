@@ -7,9 +7,9 @@ export default function WhyJoin() {
       <h1 className="text-4xl font-bold text-center mb-8">Why Join M.E.T.?</h1>
       <div className="space-y-8">
         <section className="text-center">
-          <p className="text-2xl font-semibold mb-4">Because making friends as an adult shouldn't be this hard!</p>
+          <p className="text-2xl font-semibold mb-4">Because making friends as an adult shouldn&apos;t be this hard!</p>
           <p className="text-lg text-muted-foreground">
-            Let's face it—your couch is comfy, but it's not introducing you to new people. Enter Mingle Eat Talk (M.E.T.), the premium socializing platform that makes finding your kind of people fun, effortless, and way less awkward than trying to strike up a conversation at the gym.
+            Let&apos;s face it—your couch is comfy, but it&apos;s not introducing you to new people. Enter Mingle Eat Talk (M.E.T.), the premium socializing platform that makes finding your kind of people fun, effortless, and way less awkward than trying to strike up a conversation at the gym.
           </p>
         </section>
 
@@ -31,13 +31,13 @@ export default function WhyJoin() {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Quality Over Quantity</h3>
-                <p className="text-muted-foreground">This isn't about meeting everyone—it's about finding your people.</p>
+                <p className="text-muted-foreground">This isn&apos;t about meeting everyone—it&apos;s about finding your people.</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Unforgettable Experiences</h3>
-                <p className="text-muted-foreground">Life's too short for boring weekends and stale friendships. With M.E.T., you'll connect with amazing individuals and share unforgettable experiences.</p>
+                <p className="text-muted-foreground">Life&apos;s too short for boring weekends and stale friendships. With M.E.T., you&apos;ll connect with amazing individuals and share unforgettable experiences.</p>
               </CardContent>
             </Card>
           </div>
