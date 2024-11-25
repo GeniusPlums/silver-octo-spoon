@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const MingleEatTalk: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +23,7 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
     <header className="relative flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-4 sm:px-8 lg:px-16 py-3 bg-white">
       <div className="flex items-center gap-4 text-gray-900">
         <div style={{ width: '80px', height: '40px' }}>
-          <img src="/logo met_page-0003.jpg" alt="Mingle Eat Talk Logo" style={{ width: '100%', height: '100%' }} />
+          <Image src="/logo met_page-0003.jpg" alt="Mingle Eat Talk Logo" width={80} height={40} />
         </div>
         <h2 className="text-gray-900 text-lg font-bold leading-tight tracking-[-0.015em]"></h2>
       </div>
@@ -29,9 +31,9 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
       {/* Desktop Navigation */}
       <div className="hidden lg:flex flex-1 justify-end gap-8">
         <nav className="flex items-center gap-9">
-          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">About Mingle Eat</a>
-          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Community</a>
-          <a className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="#">Blog</a>
+          <Link className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="/about-us">About Mingle Eat</Link>
+          <Link className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="/community">Community</Link>
+          <Link className="text-gray-700 text-sm font-medium leading-normal hover:text-gray-900" href="/blog">Blog</Link>
         </nav>
         <div className="flex gap-2">
           <button className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200">
@@ -57,10 +59,10 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
       {isMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50">
           <nav className="flex flex-col w-full py-4">
-            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">About Mingle Eat Talk</a>
-            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">Events</a>
-            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">Community</a>
-            <a className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="#">Blog</a>
+            <Link className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="/about-us">About Mingle Eat Talk</Link>
+            <Link className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="/events">Events</Link>
+            <Link className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="/community">Community</Link>
+            <Link className="text-gray-700 text-sm font-medium leading-normal py-3 px-4 hover:bg-gray-50 hover:text-gray-900" href="/blog">Blog</Link>
             <div className="flex flex-col gap-2 px-4 pt-3">
               <button className="w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-gray-100 text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200">
                 <span className="truncate">Sign In</span>
@@ -221,7 +223,7 @@ const UpcomingEventsSection: React.FC = () => {
         ))}
       </div>
       <div className="text-center mt-8">
-        <a href="#" className="text-black hover:text-gray-800 font-medium hover:underline">View all events</a>
+        <Link href="/events" className="text-black hover:text-gray-800 font-medium hover:underline">View all events</Link>
       </div>
     </div>
   );
@@ -251,8 +253,6 @@ const TestimonialsSection: React.FC = () => {
 
   return (
     <div className="my-12 text-gray-900">
-      <h2 className="text-3xl font-bold mb-6">What Our Members Say</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
             <p className="text-gray-700 mb-4">&ldquo;{testimonial.text}&rdquo;</p>
