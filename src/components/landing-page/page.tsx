@@ -276,35 +276,35 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-700 hover:text-black">About Us</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">How It Works</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Why Mingle Eat Talk</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Pricing</a></li>
+              <li><a href="/about-us" className="text-gray-700 hover:text-black">About Us</a></li>
+              <li><a href="/how-it-works" className="text-gray-700 hover:text-black">How It Works</a></li>
+              <li><a href="/why-mingle-eat-talk" className="text-gray-700 hover:text-black">Why Mingle Eat Talk</a></li>
+              <li><a href="/pricing" className="text-gray-700 hover:text-black">Pricing</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Community</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-700 hover:text-black">Events</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Blog</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Success Stories</a></li>
+              <li><a href="/events" className="text-gray-700 hover:text-black">Events</a></li>
+              <li><a href="/blog" className="text-gray-700 hover:text-black">Blog</a></li>
+              <li><a href="/success-stories" className="text-gray-700 hover:text-black">Success Stories</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-700 hover:text-black">Help Center</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">FAQs</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Contact Us</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Privacy Policy</a></li>
+              <li><a href="/help-center" className="text-gray-700 hover:text-black">Help Center</a></li>
+              <li><a href="/faqs" className="text-gray-700 hover:text-black">FAQs</a></li>
+              <li><a href="/contact-us" className="text-gray-700 hover:text-black">Contact Us</a></li>
+              <li><a href="/privacy-policy" className="text-gray-700 hover:text-black">Privacy Policy</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-700 hover:text-black">LinkedIn</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Instagram</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-black">Facebook</a></li>
+              <li><a href="https://www.linkedin.com" className="text-gray-700 hover:text-black">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com" className="text-gray-700 hover:text-black">Instagram</a></li>
+              <li><a href="https://www.facebook.com" className="text-gray-700 hover:text-black">Facebook</a></li>
             </ul>
           </div>
         </div>
