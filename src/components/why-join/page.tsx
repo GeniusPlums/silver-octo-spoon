@@ -45,7 +45,7 @@ export default function WhyJoin() {
 
         <section className="text-center space-y-6">
           <p className="text-xl">
-            So why wait? Join M.E.T. now—because your future besties are cooler than you think, and they're already here!
+            So why wait? Join M.E.T. now—because your future besties are cooler than you think, and they&apos;re already here!
           </p>
           <Button size="lg" className="font-semibold">
             Join M.E.T. Now

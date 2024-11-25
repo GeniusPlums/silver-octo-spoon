@@ -10,7 +10,7 @@ export default function AboutUs() {
             Welcome to Mingle Eat Talk (M.E.T.), a premium offline non-dating community designed to help you expand your social circle and create lasting friendships!
           </p>
           <p className="text-lg text-muted-foreground">
-            At M.E.T., we bring together like-minded individuals who value meaningful connections and unforgettable experiences. This isn't a dating platform—it's a vibrant, handpicked community of people who love to share good vibes, exciting adventures, and enriching conversations.
+            At M.E.T., we bring together like-minded individuals who value meaningful connections and unforgettable experiences. This isn&apos;t a dating platform—it&apos;s a vibrant, handpicked community of people who love to share good vibes, exciting adventures, and enriching conversations.
           </p>
         </section>
 
