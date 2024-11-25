@@ -253,6 +253,8 @@ const TestimonialsSection: React.FC = () => {
 
   return (
     <div className="my-12 text-gray-900">
+      <h2 className="text-3xl font-bold mb-6">What Our Members Say</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
             <p className="text-gray-700 mb-4">&ldquo;{testimonial.text}&rdquo;</p>
@@ -276,27 +278,27 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="/about-us" className="text-gray-700 hover:text-black">About Us</a></li>
-              <li><a href="/how-it-works" className="text-gray-700 hover:text-black">How It Works</a></li>
-              <li><a href="/why-mingle-eat-talk" className="text-gray-700 hover:text-black">Why Mingle Eat Talk</a></li>
-              <li><a href="/pricing" className="text-gray-700 hover:text-black">Pricing</a></li>
+              <li><Link href="/about-us" className="text-gray-700 hover:text-black">About Us</Link></li>
+              <li><Link href="/how-it-works" className="text-gray-700 hover:text-black">How It Works</Link></li>
+              <li><Link href="/why-mingle-eat-talk" className="text-gray-700 hover:text-black">Why Mingle Eat Talk</Link></li>
+              <li><Link href="/pricing" className="text-gray-700 hover:text-black">Pricing</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Community</h3>
             <ul className="space-y-2">
-              <li><a href="/events" className="text-gray-700 hover:text-black">Events</a></li>
-              <li><a href="/blog" className="text-gray-700 hover:text-black">Blog</a></li>
-              <li><a href="/success-stories" className="text-gray-700 hover:text-black">Success Stories</a></li>
+              <li><Link href="/events" className="text-gray-700 hover:text-black">Events</Link></li>
+              <li><Link href="/blog" className="text-gray-700 hover:text-black">Blog</Link></li>
+              <li><Link href="/success-stories" className="text-gray-700 hover:text-black">Success Stories</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
-              <li><a href="/help-center" className="text-gray-700 hover:text-black">Help Center</a></li>
-              <li><a href="/faqs" className="text-gray-700 hover:text-black">FAQs</a></li>
-              <li><a href="/contact-us" className="text-gray-700 hover:text-black">Contact Us</a></li>
-              <li><a href="/privacy-policy" className="text-gray-700 hover:text-black">Privacy Policy</a></li>
+              <li><Link href="/help-center" className="text-gray-700 hover:text-black">Help Center</Link></li>
+              <li><Link href="/faqs" className="text-gray-700 hover:text-black">FAQs</Link></li>
+              <li><Link href="/contact-us" className="text-gray-700 hover:text-black">Contact Us</Link></li>
+              <li><Link href="/privacy-policy" className="text-gray-700 hover:text-black">Privacy Policy</Link></li>
             </ul>
           </div>
           <div>
