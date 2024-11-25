@@ -122,7 +122,7 @@ const HeroSection: React.FC = () => {
           <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto drop-shadow">
             Join a community of professionals who believe in the power of meaningful connections and shared experiences.
           </p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={handleGetStarted}
               className="bg-yellow-400 text-black px-8 py-3 rounded-xl font-bold text-lg hover:bg-yellow-500 transition duration-300 shadow-lg hover:shadow-xl"
