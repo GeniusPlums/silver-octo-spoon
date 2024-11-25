@@ -120,7 +120,7 @@ const HeroSection: React.FC = () => {
             Connect, Share, and Grow Together
           </h1>
           <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto drop-shadow">
-            Join a community of professionals who believe in the power of meaningful connections and shared experiences.
+            Join a curated non-dating community of professionals focused on authentic socializing, meaningful connections, and genuine friendships.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
@@ -152,15 +152,15 @@ const AboutSection: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-yellow-50 p-6 rounded-xl">
           <h3 className="text-xl font-semibold mb-2">Curated Connections</h3>
-          <p className="text-gray-700">We match you with professionals who align with your goals and interests.</p>
+          <p className="text-gray-700">We connect you with like-minded people who share your goals and interests, making socialising more meaningful and enjoyable.</p>
         </div>
         <div className="bg-yellow-50 p-6 rounded-xl">
           <h3 className="text-xl font-semibold mb-2">Beyond Networking</h3>
-          <p className="text-gray-700">Build lasting relationships through shared experiences and collaborative opportunities.</p>
+          <p className="text-gray-700">Foster meaningful connections through engaging and shared social experiences.</p>
         </div>
         <div className="bg-yellow-50 p-6 rounded-xl">
-          <h3 className="text-xl font-semibold mb-2">Career Acceleration</h3>
-          <p className="text-gray-700">Leverage your network to unlock new opportunities and accelerate your professional growth.</p>
+          <h3 className="text-xl font-semibold mb-2">Socialize</h3>
+          <p className="text-gray-700">Build meaningful connections to explore new opportunities and enhance your personal growth.</p>
         </div>
       </div>
     </div>
