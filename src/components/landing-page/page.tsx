@@ -281,7 +281,6 @@ const Footer: React.FC = () => {
               <li><Link href="/about-us" className="text-gray-700 hover:text-black">About Us</Link></li>
               <li><Link href="/how-it-works" className="text-gray-700 hover:text-black">How It Works</Link></li>
               <li><Link href="/why-mingle-eat-talk" className="text-gray-700 hover:text-black">Why Mingle Eat Talk</Link></li>
-              <li><Link href="/pricing" className="text-gray-700 hover:text-black">Pricing</Link></li>
             </ul>
           </div>
           <div>
