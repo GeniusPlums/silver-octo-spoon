@@ -1,36 +1,61 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Search } from 'lucide-react'
+import { Input } from "@/components/ui/input"
 
 const FAQSection = () => {
   return (
-    <main className="flex-1">
-      <div className="container mx-auto px-8 py-16 max-w-6xl">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Frequently Asked Questions</h1>
-          <p className="text-gray-600 text-lg">Everything you need to know about M.E.T. community</p>
-        </div>
+    <main className="flex-1 bg-gradient-to-b from-yellow-50 to-white">
+      <div className="container mx-auto px-4 py-16 max-w-4xl">
+        <Card className="mb-12">
+          <CardHeader className="text-center">
+            <CardTitle className="text-4xl font-bold mb-4">Frequently Asked Questions</CardTitle>
+            <CardDescription className="text-gray-600 text-lg">
+              Everything you need to know about M.E.T. community
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Input 
+                type="text" 
+                placeholder="Search FAQs..." 
+                className="pl-10 bg-yellow-50 border-yellow-200 focus:border-yellow-300 focus:ring-yellow-300"
+              />
+            </div>
+          </CardContent>
+        </Card>
 
-        <div className="bg-yellow-50 rounded-2xl p-8">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqData.map((item, index) => (
-              <AccordionItem 
-                key={`item-${index + 1}`} 
-                value={`item-${index + 1}`}
-                className="border border-yellow-200 bg-white rounded-xl overflow-hidden"
-              >
-                <AccordionTrigger className="px-6 hover:bg-yellow-50 hover:no-underline">
-                  <span className="text-lg font-medium">{item.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pt-2 pb-4 text-gray-600">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        <Accordion type="single" collapsible className="w-full space-y-4">
+          {faqData.map((item, index) => (
+            <AccordionItem 
+              key={`item-${index + 1}`} 
+              value={`item-${index + 1}`}
+              className="border border-yellow-200 bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
+            >
+              <AccordionTrigger className="px-6 py-4 hover:bg-yellow-50 hover:no-underline">
+                <span className="text-lg font-medium text-left">{item.question}</span>
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pt-2 pb-4 text-gray-600">
+                {item.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+
+        <Card className="mt-12 bg-yellow-100 border-yellow-200">
+          <CardContent className="p-6 text-center">
+            <p className="text-lg font-medium mb-4">Still have questions?</p>
+            <p className="text-gray-600 mb-6">We're here to help! Reach out to our friendly support team.</p>
+            <button className="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition duration-300">
+              Contact Support
+            </button>
+          </CardContent>
+        </Card>
       </div>
     </main>
-  );
-};
+  )
+}
 
 const faqData = [
   {
@@ -77,6 +102,6 @@ const faqData = [
     question: "How often can I attend events?",
     answer: "You can attend as many events as you like! We host regular events to keep the fun rolling and help you continuously expand and refresh your social circle."
   }
-];
+]
 
-export default FAQSection;
+export default FAQSection
