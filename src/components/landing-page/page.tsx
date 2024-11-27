@@ -27,7 +27,7 @@ const Header: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (isOpen: boolean) =
         </div>
         <h2 className="text-gray-900 text-lg font-bold leading-tight tracking-[-0.015em]"></h2>
       </div>
-      
+
       {/* Desktop Navigation */}
       <div className="hidden lg:flex flex-1 justify-end gap-8">
         <nav className="flex items-center gap-9">
@@ -105,7 +105,7 @@ const HeroSection: React.FC = () => {
           playsInline
           className="object-cover w-full h-full"
         >
-          <source 
+          <source
             src="/June MET.mp4" // Updated video source path
             type="video/mp4"
           />
@@ -125,13 +125,13 @@ const HeroSection: React.FC = () => {
             Join a curated non-dating community of professionals focused on authentic socializing, meaningful connections, and genuine friendships.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
+            <button
               onClick={handleGetStarted}
               className="bg-yellow-400 text-black px-8 py-3 rounded-xl font-bold text-lg hover:bg-yellow-500 transition duration-300 shadow-lg hover:shadow-xl"
             >
               Login
             </button>
-            <button 
+            <button
               onClick={() => router.push('/learn-more')}
               className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-8 py-3 rounded-xl font-bold text-lg hover:bg-white/30 transition duration-300 shadow-lg hover:shadow-xl"
             >
