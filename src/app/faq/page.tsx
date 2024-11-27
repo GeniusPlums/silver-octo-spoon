@@ -46,7 +46,7 @@ const FAQSection = () => {
         <Card className="mt-12 bg-yellow-100 border-yellow-200">
           <CardContent className="p-6 text-center">
             <p className="text-lg font-medium mb-4">Still have questions?</p>
-            <p className="text-gray-600 mb-6">We're here to help! Reach out to our friendly support team.</p>
+            <p className="text-gray-600 mb-6">We are here to help! Reach out to our friendly support team.</p>
             <button className="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition duration-300">
               Contact Support
             </button>
