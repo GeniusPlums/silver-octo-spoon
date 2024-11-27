@@ -280,7 +280,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li><Link href="/about-us" className="text-gray-700 hover:text-black">About Us</Link></li>
               <li><Link href="/how-it-works" className="text-gray-700 hover:text-black">How It Works</Link></li>
-              <li><Link href="/why-mingle-eat-talk" className="text-gray-700 hover:text-black">Why Mingle Eat Talk</Link></li>
+              <li><Link href="/why-join" className="text-gray-700 hover:text-black">Why Mingle Eat Talk</Link></li>
             </ul>
           </div>
           <div>
