@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export default function AboutUs() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-4xl text-gray-900">
+    <div className="container mx-auto px-8 py-16 max-w-6xl text-gray-900">
       <h1 className="text-4xl font-bold text-center mb-8">About Us</h1>
       <div className="space-y-8">
         <section className="text-center">
@@ -40,5 +40,5 @@ export default function AboutUs() {
         </section>
       </div>
     </div>
-  )
+  );
 }

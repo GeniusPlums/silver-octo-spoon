@@ -1,4 +1,3 @@
-// app/how-it-works/page.tsx
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -6,13 +5,13 @@ export default function HowItWorksPage() {
   return (
     <div className="relative flex size-full min-h-screen flex-col bg-white">
       <main className="flex-1">
-        <div className="container mx-auto px-4 py-16 max-w-4xl text-gray-900">
+        <div className="container mx-auto px-8 py-16 max-w-6xl text-gray-900">
           <h1 className="text-4xl font-bold text-center mb-8">How It Works</h1>
           <p className="text-xl text-center mb-12">
             Joining Mingle Eat Talk (M.E.T.) Community is as easy (and fun) as ordering your favorite dessert. Here&apos;s how to become part of the coolest social crew around:
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card>
               <CardContent className="p-6">
                 <div className="bg-yellow-400 text-black rounded-full w-12 h-12 flex items-center justify-center mb-4">
